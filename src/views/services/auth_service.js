@@ -10,3 +10,10 @@ export function login(data){
 export function logOut(){
     return http().post('/logout')
 }
+
+
+export function varification(data){
+    return http().post('/varification',data)
+}
+
+
