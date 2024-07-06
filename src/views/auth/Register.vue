@@ -75,7 +75,7 @@ user.password_confirmation='';
 user.email='';
 
 setTimeout(() => {
-router.push('/Login')    
+router.push('/validateemail')    
 }, 1000);
 
 

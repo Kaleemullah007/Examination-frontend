@@ -9,6 +9,7 @@ import  Question  from "../views/question/View.vue";
 import  Subject  from "../views/subject/View.vue";
 import { toast } from 'vue3-toastify';
 import { useAuthStore } from '../stores/authStore';
+import EmailVerfication from '../views/auth/email-verfication.vue';
 
 
 const router = createRouter({
@@ -40,6 +41,7 @@ const router = createRouter({
       }
     },
 
+
     {
       path: '/register',
       name: 'Register',
@@ -49,10 +51,18 @@ const router = createRouter({
         if(!authStore.isLoggedIn){
           next()
         }else{
-          next('/subject')
+          next('/validateemail')
         }
       }
     },
+
+    {
+      path: '/validateemail',
+      name: 'validateemail',
+      component: EmailVerfication
+      
+    },
+
 
     {
       path: '/result',
